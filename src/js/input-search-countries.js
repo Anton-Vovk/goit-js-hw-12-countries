@@ -22,7 +22,7 @@ function inputHandler(event) {
         alert({
           text: 'Найдено слишком много совпадений. Пожалуйста, введите более конкретный запрос!',
           type: 'error',
-          delay: 4000,
+          delay: 3000,
         });
       }
       if (result.length >= 2 && result.length <= 10) {

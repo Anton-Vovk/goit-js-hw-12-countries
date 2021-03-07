@@ -3,6 +3,18 @@
 @import '../node_modules/@pnotify/mobile/dist/PNotifyMobile.css';
 @import '../node_modules/@pnotify/core/dist/Material.css';
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
 .search {
   display: block;
   margin: 0 auto;
