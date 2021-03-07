@@ -1,3 +1,3 @@
 
-import '/css/styles.css';
-import '/js/input-search.js';
+import './js/input-search-countries';
+import './styles.css';
