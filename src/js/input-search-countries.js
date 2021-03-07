@@ -51,7 +51,7 @@ function createCountryPropertiesMarkup(result) {
       <p><span class='country-property'>Capital: </span>${result[0].capital}</p>
       <p><span class='country-property'>Population: </span>${result[0].population}</p>
       <h3 class='country-property'>Languages:</h3><ul>${markupLanguage}</ul></div>
-      <img height='400px' src="${result[0].flag}" alt="flag"></img></div>`;
+      <img height='300px' src="${result[0].flag}" alt="flag"></img></div>`;
   return markupCountry;
 }
 

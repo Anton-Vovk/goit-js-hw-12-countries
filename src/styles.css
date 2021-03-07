@@ -3,7 +3,7 @@
 @import '../node_modules/@pnotify/mobile/dist/PNotifyMobile.css';
 @import '../node_modules/@pnotify/core/dist/Material.css';
 
-html {
+/* html {
   box-sizing: border-box;
 }
 
@@ -13,7 +13,7 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-}
+} */
 
 .search {
   display: block;
