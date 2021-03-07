@@ -11,9 +11,9 @@ defaultModules.set(PNotifyMobile, {});
 
 const inputRef = document.querySelector('.search');
 const searchResultsRef = document.querySelector('.search-results');
-inputRef.addEventListener('input', debounce(inputHandle, 500));
 
-function inputHandle(event) {
+inputRef.addEventListener('input', debounce(inputHandler, 500));
+function inputHandler(event) {
   searchResultsRef.innerHTML = '';
   const countrySearchName = event.target.value;
   fetchCountries(countrySearchName)
@@ -28,41 +28,41 @@ function inputHandle(event) {
       if (result.length >= 2 && result.length <= 10) {
         searchResultsRef.insertAdjacentHTML(
           'beforeend',
-          createListCountriesTemplate(result),
+          createListCountriesMarkup(result),
         );
       }
       if (result.length === 1) {
         searchResultsRef.insertAdjacentHTML(
           'beforeend',
-          createCountryPropertiesTemplate(result),
+          createCountryPropertiesMarkup(result),
         );
       }
     })
     .catch(console.log);
 }
 
-function createCountryPropertiesTemplate(result) {
-  const templateLang = result[0].languages.reduce((acc, item) => {
+function createCountryPropertiesMarkup(result) {
+  const markupLanguage = result[0].languages.reduce((acc, item) => {
     acc += `<li>${item.name}</li>`;
     return acc;
   }, '');
-  const templateCountry = `<h2 class='country-name'>${result[0].name}</h2>
-        <div class='wrapper'><div class='country-properties'>
+  const markupCountry = `<h2 class='country-name'>${result[0].name}</h2>
+      <div class='wrapper'><div class='country-properties'>
       <p><span class='country-property'>Capital: </span>${result[0].capital}</p>
       <p><span class='country-property'>Population: </span>${result[0].population}</p>
-      <h3 class='country-property'>Languages:</h3><ul>${templateLang}</ul></div>
+      <h3 class='country-property'>Languages:</h3><ul>${markupLanguage}</ul></div>
       <img height='400px' src="${result[0].flag}" alt="flag"></img></div>`;
-  return templateCountry;
+  return markupCountry;
 }
 
-function createListCountriesTemplate(result) {
-  const template =
+function createListCountriesMarkup(result) {
+  const markup =
     '<ul class="country-list">' +
     result.reduce((acc, item) => {
       acc += `<li>${item.name}</li>`;
       return acc;
     }, '') +
     '</ul>';
-  return template;
+  return markup;
 }
 
